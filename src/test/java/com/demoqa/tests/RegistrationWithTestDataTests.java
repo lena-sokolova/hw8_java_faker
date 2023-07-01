@@ -23,8 +23,8 @@ public class RegistrationWithTestDataTests extends TestBase {
         $("#genterWrapper").$(byText(gender)).click();
         $("#userNumber").setValue(userNumber);
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption(birthMonth);
-        $(".react-datepicker__year-select").selectOption(birthYear);
+        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__day--007:not(.react-datepicker__day--outside-month)").click();
         $("#subjectsInput").setValue(subject).pressEnter();
         $("#hobbiesWrapper").$(byText(hobbies)).click();

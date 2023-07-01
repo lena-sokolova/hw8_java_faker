@@ -1,5 +1,7 @@
 package com.demoqa.utils;
 
+import com.github.javafaker.Faker;
+
 import java.security.SecureRandom;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
@@ -51,6 +53,44 @@ public class RandomUtils {
         int index = getRandomInt(0, values.length - 1);
 
         return values[index];
+    }
+
+    public static String getRandomMonth() {
+        String[] month = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        return new Faker().options().option(month);
+    }
+
+    public static String getRandomSubject() {
+        String[] subjects = {"Math", "English", "Chemistry", "Civics", "Computer Science", "Arts", "Physics", "Economics"};
+        return new Faker().options().option(subjects);
+    }
+
+    public static String getRandomHobbies() {
+        String[] hobbies = {"Sports", "Reading", "Music"};
+        return new Faker().options().option(hobbies);
+    }
+
+    public static String getRandomState() {
+//        String[] state = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
+//        return new Faker().options().option(state);
+        return new Faker().options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
+    }
+
+    public static String getRandomCity(String state) {
+        if (state.equals("NCR")) {
+            String[] city = {"Delhi", "Gurgaon", "Noida"};
+            return new Faker().options().option(city);
+        } else if (state.equals("Uttar Pradesh")) {
+            String[] city = {"Agra", "Lucknow", "Merrut"};
+            return new Faker().options().option(city);
+        } else if (state.equals("Haryana")) {
+            String[] city = {"Karnal", "Panipat"};
+            return new Faker().options().option(city);
+        } else if (state.equals("Rajasthan")) {
+            String[] city = {"Jaipur", "Jaiselmer"};
+            return new Faker().options().option(city);
+        }
+        return null;
     }
 
     public static String getRandomUuid() {
