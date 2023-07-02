@@ -8,6 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
 
+//    используется для отладки тестов
     public static void main(String[] args) {
         System.out.println(getRandomString(10));
         System.out.println(getRandomEmail());
@@ -16,7 +17,6 @@ public class RandomUtils {
         System.out.println(getRandomGender());
         System.out.println(getRandomUuid());
     }
-
 
     public static String getRandomString(int len) {
 //        String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
